@@ -3,7 +3,7 @@ import csv
 from bs4 import BeautifulSoup
 from pathlib import Path
 
-html_path = Path("..data/raw_data/web_data.html")
+html_path = Path("../data/raw_data/web_data.html")
 
 print(f"Reading the html: {html_path}")
 # creating a soup object using lxml
