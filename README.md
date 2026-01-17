@@ -26,5 +26,5 @@ Again from the same scripts folder, Run:
 **python3 data_filter.py**
 
 This will read the "web_data.html" and create two files:
-market_data.csv into batuhan_aydin_9861477052/scripts/data/processed_data/
-news_data.csv into batuhan_aydin_9861477052/scripts/data/processed_data/
+- *market_data.csv* into batuhan_aydin_9861477052/scripts/data/processed_data/
+- *news_data.csv* into batuhan_aydin_9861477052/scripts/data/processed_data/
