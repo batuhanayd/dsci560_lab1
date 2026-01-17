@@ -1,25 +1,39 @@
-from bs4 import BeautifulSoup
-import requests
+# imports
 import os
+import time
 
-# Notes: Market banner:
-#It is  a section with class:"MarketsBanner-container"
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.service import Service as FirefoxService
 
-# Section Titled "Latest News":
-# It is a div with class="LatestNews-isHomePage LatestNews-isIntlHomepage"
+URL = "https://www.cnbc.com/world/?region=world"
+out_path = "../data/raw_data/web_data.html"
 
-url = "https://www.cnbc.com/world/?region=world"
+# setting the options for the webdriver
+options = webdriver.FirefoxOptions()
+options.add_argument("-headless")
 
-headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+# Im using explicitly geckodriver because default firefox did not work
+service = FirefoxService(executable_path="/snap/bin/geckodriver")
 
-# request the access to the website using headers (without headers, the response is blocked)
-html = requests.get(url, headers=headers).text
-# Parse the html using bs4
-soup = BeautifulSoup(html, "html.parser")
-##print(soup)
+# setting up the driver and reding the url
+driver = webdriver.Firefox(service=service, options=options)
+driver.get(URL)
+wait = WebDriverWait(driver, 60)
 
-# saving the file
-path = "../data/raw_data/web_data.html"
-with open(path, "w") as f:
-  f.write(html)
+# Waiting to make sure the market banner data is retrieved.
+# cnbc probably uses an API to get that data so that is probably why it requires us to wait for it to be uploaded.
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".MarketCard-symbol")))
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".MarketCard-stockPosition")))
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".MarketCard-changesPct")))
 
+time.sleep(1)
+
+# writing/saving the html file
+with open(out_path, "w", encoding="utf-8") as f:
+    f.write(driver.page_source)
+
+print(f"Saved the html file to: {out_path}")
+driver.quit()

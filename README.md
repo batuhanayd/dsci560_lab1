@@ -1,0 +1,29 @@
+# Lab1
+
+This lab is about web scraping. Scrapes the CNBC World page HTML using Selenium and then filters the HTML
+with BeatifulSoup to get the data from market banner and latestNews list and turn it itno CSV files.
+
+## Setup (.venv)
+From the lab root which is the folder that contain the "batuhan_aydin_9861477052" folder:
+Run:
+source .venv/bin/activate
+
+This is to connect to the .venv I have craeted. You should run this from the root every time you open a new terminal.
+
+## 1) Scraping the HTML
+First you need your working directory to be the "scripts" folder.
+To get there from the root, Run:
+cd batuhan_aydin_9861477052/scripts
+
+Then to scrape the HTML of the CNBC website, Run:
+python3 web_scraper.py
+
+This will create the "web_data.html" into batuhan_aydin_9861477052/scripts/data/raw_data/
+
+## 2) Data Filtering
+Again from the same scripts folder, Run:
+python3 data_filter.py
+
+This will read the "web_data.html" and create two files:
+market_data.csv into batuhan_aydin_9861477052/scripts/data/processed_data/
+news_data.csv into batuhan_aydin_9861477052/scripts/data/processed_data/
