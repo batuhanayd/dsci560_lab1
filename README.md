@@ -15,6 +15,14 @@ Then Run:
 
 This is to connect to the ".venv" I have created. You should run this from the root every time you open a new terminal.
 
+Then to install the Python dependencies, Run:<br>
+**pip install selenium beatifulsoup4**
+
+Also from the ubuntu terminal, Run:<br>
+**sudo apt install**<br>
+**sudo apt install -y firefox**<br>
+**sudo apt install -y firefox-geckodriver**
+
 ## 1) Scraping the HTML
 First you need your working directory to be the "scripts" folder.
 To get there from the root, Run:<br>
