@@ -7,9 +7,9 @@ USCID: 9861477052
 This lab is about web scraping. The code scrapes the CNBC World page HTML using Selenium, and then filters the HTML
 with BeatifulSoup to get the data from market banner and latestNews list and turn it into CSV files.
 
-## Setup
+## Setup (Ubuntu)
 
-**Note:** The instructions below are written for Ubuntu (Virtual Machine). If running on macOS/Windows, the Firefox/geckodriver install paths may differ and needs to be fixed!
+**Note:** The instructions below are written for Ubuntu (Virtual Machine). If running on Windows, the Firefox/geckodriver install paths may differ and needs to be fixed!
 
 Open the terminal from the lab root which is the folder that contain the "batuhan_aydin_9861477052" folder.
 
@@ -33,6 +33,26 @@ Verify geckodriver path (this project expects /usr/bin/geckodriver):<br>
 If it is not "/usr/bin/geckodriver", force it:<br>
 **sudo ln -sf "$(which geckodriver)" /usr/bin/geckodriver**
 **which geckodriver**
+
+-------------------------------------------------------------------
+
+## Setup (MacOS)
+
+Install Firefox + geckodriver:<br>
+**brew install --cask firefox**<br>
+**brew install geckodriver**
+
+find the geckodriver path:<br>
+**which geckodriver**
+
+update "web_scraper.py" to use your path:<br>
+Replace:<br>
+**service = FirefoxService(executable_path="/snap/bin/geckodriver")**<br>
+
+With (use the output from **which geckodriver**, for example "/opt/homebrew/bin/geckodriver"):<br>
+**service = (executable_path="YOUR_GECKODRIVER_PATH_HERE")**
+
+------------------------------------------------------------------
 
 ## 1) Scraping the HTML
 First you need your working directory to be the "scripts" folder.
