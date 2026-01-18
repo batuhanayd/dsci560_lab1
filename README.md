@@ -16,10 +16,10 @@ Then Run:
 This is to connect to the ".venv" I have created. You should run this from the root every time you open a new terminal.
 
 Then to install the Python dependencies, Run:<br>
-**pip install selenium beatifulsoup4**
+**pip install selenium beautifulsoup4**
 
 Also from the ubuntu terminal, Run:<br>
-**sudo apt install**<br>
+**sudo apt update**<br>
 **sudo apt install -y firefox**<br>
 **sudo apt install -y firefox-geckodriver**
 
