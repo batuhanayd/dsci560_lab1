@@ -40,7 +40,10 @@ If it is not "/usr/bin/geckodriver", force it:<br>
 
 Install Firefox + geckodriver:<br>
 **brew install --cask firefox**<br>
-**brew install geckodriver**
+**brew install geckodriver**<br>
+**brew install --cask firefox**<br>
+**brew install geckodriver**<br>
+**pip install selenium beautifulsoup4 lxml**
 
 find the geckodriver path:<br>
 **which geckodriver**
