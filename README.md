@@ -17,18 +17,18 @@ This is to connect to the ".venv" I have created. You should run this from the r
 
 ## 1) Scraping the HTML
 First you need your working directory to be the "scripts" folder.
-To get there from the root, Run:
+To get there from the root, Run:<br>
 **cd batuhan_aydin_9861477052/scripts**
 
-Then to scrape the HTML of the CNBC website, Run:
+Then to scrape the HTML of the CNBC website, Run:<br>
 **python3 web_scraper.py**
 
-This will create the html file "web_data.html" into the directory: batuhan_aydin_9861477052/scripts/data/raw_data/
+This will create the html file "web_data.html" into the directory: batuhan_aydin_9861477052/data/raw_data/
 
 ## 2) Data Filtering
-Again from the same scripts folder, Run:
+Again from the same scripts folder, Run:<br>
 **python3 data_filter.py**
 
 This will read the "web_data.html" and create two files:
-- *market_data.csv* into batuhan_aydin_9861477052/scripts/data/processed_data/
-- *news_data.csv* into batuhan_aydin_9861477052/scripts/data/processed_data/
+- *market_data.csv* into batuhan_aydin_9861477052/data/processed_data/
+- *news_data.csv* into batuhan_aydin_9861477052/data/processed_data/
