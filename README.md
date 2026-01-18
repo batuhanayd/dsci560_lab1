@@ -8,21 +8,31 @@ This lab is about web scraping. The code scrapes the CNBC World page HTML using 
 with BeatifulSoup to get the data from market banner and latestNews list and turn it into CSV files.
 
 ## Setup
+
+**Note:** The instructions below are written for Ubuntu (Virtual Machine). If running on macOS/Windows, the Firefox/geckodriver install paths may differ and needs to be fixed!
+
 Open the terminal from the lab root which is the folder that contain the "batuhan_aydin_9861477052" folder.
 
-Then Create a virtual environment if you wish:<br>
+Then Create a virtual environment:<br>
 **python3 -m venv .venv**<br>
 **source .venv/bin/activate**
 
 This is to connect to the ".venv". You should run this from the root every time you open a new terminal if set it up once.
 
 Then to install the Python dependencies, Run:<br>
-**pip install selenium beautifulsoup4**
+**pip install selenium beautifulsoup4 lxml**
 
 Also from the ubuntu terminal, Run:<br>
 **sudo apt update**<br>
 **sudo apt install -y firefox**<br>
 **sudo apt install -y firefox-geckodriver**
+
+Verify geckodriver path (this project expects /usr/bin/geckodriver):<br>
+**which geckodriver**
+
+If it is not "/usr/bin/geckodriver", force it:<br>
+**sudo ln -sf "$(which geckodriver)" /usr/bin/geckodriver**
+**which geckodriver**
 
 ## 1) Scraping the HTML
 First you need your working directory to be the "scripts" folder.
