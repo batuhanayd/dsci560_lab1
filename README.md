@@ -7,13 +7,14 @@ USCID: 9861477052
 This lab is about web scraping. The code scrapes the CNBC World page HTML using Selenium, and then filters the HTML
 with BeatifulSoup to get the data from market banner and latestNews list and turn it into CSV files.
 
-## Setup (.venv)
+## Setup
 Open the terminal from the lab root which is the folder that contain the "batuhan_aydin_9861477052" folder.
 
-Then Run:
+Then Create a virtual environment if you wish:<br>
+**python3 -m venv .venv**<br>
 **source .venv/bin/activate**
 
-This is to connect to the ".venv" I have created. You should run this from the root every time you open a new terminal.
+This is to connect to the ".venv". You should run this from the root every time you open a new terminal if set it up once.
 
 Then to install the Python dependencies, Run:<br>
 **pip install selenium beautifulsoup4**
